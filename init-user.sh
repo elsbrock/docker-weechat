@@ -22,3 +22,5 @@ ln -s /opt/weechat-bashrc /home/$IRC_USER/.bashrc
 
 chown $IRC_USER /opt/weechat-data
 ln -s /opt/weechat-data /home/$IRC_USER/.weechat
+
+setuser else /usr/bin/tmux new-session -s irc -d /usr/bin/weechat-curses
