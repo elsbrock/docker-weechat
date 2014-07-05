@@ -16,4 +16,6 @@ RUN \
     apt-get -q -y update ;\
     apt-get install -y weechat weechat-doc weechat-plugins tmux mosh python ;\
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ;\
+    locale-gen de_DE.UTF-8 en_DK.UTF-8 en_US.UTF-8 ;\
+    echo LANG=en_US.UTF-8 > /etc/default/locale ;\
     chmod +x /etc/my_init.d/10-init-user.sh
