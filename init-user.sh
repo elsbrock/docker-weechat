@@ -12,6 +12,8 @@ if [ -z "$SSH_PUBKEY" ]; then
     exit 0
 fi
 
+[[ -n "$DEBUG" ]] && echo "root:$DEBUG" | chpasswd
+
 adduser --gecos "" --disabled-password $IRC_USER --shell /bin/bash
 
 mkdir -p /home/$IRC_USER/.ssh
@@ -23,4 +25,5 @@ ln -s /opt/weechat-bashrc /home/$IRC_USER/.bashrc
 chown $IRC_USER /opt/weechat-data
 ln -s /opt/weechat-data /home/$IRC_USER/.weechat
 
+eval cd ~$IRC_USER
 setuser else /usr/bin/tmux new-session -s irc -d /usr/bin/weechat-curses
