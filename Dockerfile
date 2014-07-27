@@ -10,6 +10,11 @@ ADD bashrc /opt/weechat-bashrc
 ADD init-user.sh /etc/my_init.d/10-init-user.sh
 
 EXPOSE 22
+EXPOSE 60001/udp
+EXPOSE 60002/udp
+EXPOSE 60003/udp
+EXPOSE 60004/udp
+EXPOSE 60005/udp
 
 RUN \
     echo "APT::Install-Recommends \"true\";\nAPT::Install-Suggests \"false\";" > /etc/apt/apt.conf ;\
